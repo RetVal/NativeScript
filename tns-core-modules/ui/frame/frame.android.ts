@@ -861,9 +861,7 @@ class FragmentCallbacksImplementation implements AndroidFragmentCallbacks {
         }
         
         superFunc.call(fragment);
-
-        // fixes 'java.lang.IllegalStateException: The specified child already has a parent. You must call removeView() on the child's parent first'.	
-        // on app resume in nested frame scenarios with support library version greater than 26.0.0	
+	
         const entry = this.entry;
         if (!entry) {
             traceError(`${fragment}.onDestroy: entry is null or undefined`);
